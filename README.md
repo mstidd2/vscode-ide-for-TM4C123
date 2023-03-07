@@ -8,10 +8,10 @@ This guide uses/installs the following software:
  - Version: 1.76.0
  - Source: Repos (snap)
  - Extensions
-  - Cortex-Debug (version 1.8.0)
-  - C/C++ (version 1.14.4)
-  - Python (version 2022.10.1)
-  - Others as neccessary or you see fit
+    - Cortex-Debug (version 1.8.0)
+    - C/C++ (version 1.14.4)
+    - Python (version 2022.10.1)
+    - Others as neccessary or you see fit
 
  **GTKTerm**
 - Purpose: Connecting/Reconnecting to UART serial interface
