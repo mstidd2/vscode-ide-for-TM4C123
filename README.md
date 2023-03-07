@@ -51,11 +51,11 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
             - Version used for this guide: 1.0.25
             - Source: repos
         - `$ sudo apt-get install make libtool pkg-config libusb-1.0`
-    - As per the README run the following commands:
+    - As per the README run the following commands while in the same directory:
         - `./configure`
             - No option flags were needed.
             - You should see something like the following when it is done:
-
+                ![Config Output](pics/OpenOCD-config-results.png)
             ```
             OpenOCD configuration summary
             --------------------------------------------------
@@ -88,6 +88,8 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
         - `make`
         - `sudo make install`
 
+
+## Configuration
 
 
 
