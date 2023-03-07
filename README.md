@@ -1,5 +1,4 @@
-# vscode-ide-for-TM4C123
-Guide and files for using Visual Studio Code as an IDE on Ubuntu 22.04
+This document describes how to use an Ubuntu 22.04 machine for compiling, flashing, and debugging TM4C123GXL devices using a common IDE used on Linux, Visual Studio Code (VS Code).  VS Code is an alternative to, and a more generalizable solution than, using Texas Instrument's (TI’s) IDE Code Composer Studio (CCS) for software/firmware development on Linux. 
 
 ## Software Installation
 
@@ -52,6 +51,42 @@ Guide and files for using Visual Studio Code as an IDE on Ubuntu 22.04
             - Version used for this guide: 1.0.25
             - Source: repos
         - `$ sudo apt-get install make libtool pkg-config libusb-1.0`
+    - As per the README run the following commands:
+        - `./configure`
+            - No option flags were needed.
+            - You should see something like the following when it is done:
+>`OpenOCD configuration summary`
+>`--------------------------------------------------`
+>`MPSSE mode of FTDI based devices        yes (auto)`
+>`ST-Link Programmer                      yes (auto)`
+>`TI ICDI JTAG Programmer                 yes (auto)`
+>`Keil ULINK JTAG Programmer              yes (auto)`
+>`Altera USB-Blaster II Compatible        yes (auto)`
+>`Bitbang mode of FT232R based devices    yes (auto)`
+>`Versaloon-Link JTAG Programmer          yes (auto)`
+>`TI XDS110 Debug Probe                   yes (auto)`
+>`CMSIS-DAP v2 Compliant Debugger         yes (auto)`
+>`OSBDM (JTAG only) Programmer            yes (auto)`
+>`eStick/opendous JTAG Programmer         yes (auto)`
+>`Olimex ARM-JTAG-EW Programmer           yes (auto)`
+>`Raisonance RLink JTAG Programmer        yes (auto)`
+>`USBProg JTAG Programmer                 yes (auto)`
+>`Espressif JTAG Programmer               yes (auto)`
+>`Andes JTAG Programmer (deprecated)      no`
+>`CMSIS-DAP Compliant Debugger            no`
+>`Nu-Link Programmer                      no`
+>`Cypress KitProg Programmer              no`
+>`Altera USB-Blaster Compatible           no`
+>`ASIX Presto Adapter                     no`
+>`OpenJTAG Adapter                        no`
+>`Linux GPIO bitbang through libgpiod     no`
+>`SEGGER J-Link Programmer                yes (auto)`
+>`Bus Pirate                              yes (auto)`
+>`Use Capstone disassembly framework      no`
+
+        - `make`
+        - `sudo make install`
+
 
 
 
