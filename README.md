@@ -55,36 +55,36 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
         - `./configure`
             - No option flags were needed.
             - You should see something like the following when it is done:
-```
->>>OpenOCD configuration summary`
->>>--------------------------------------------------
->>>MPSSE mode of FTDI based devices        yes (auto)
->>>ST-Link Programmer                      yes (auto)
->>>TI ICDI JTAG Programmer                 yes (auto)
->>>Keil ULINK JTAG Programmer              yes (auto)
->>>Altera USB-Blaster II Compatible        yes (auto)
->>>Bitbang mode of FT232R based devices    yes (auto)
->>>Versaloon-Link JTAG Programmer          yes (auto)
->>>TI XDS110 Debug Probe                   yes (auto)
->>>CMSIS-DAP v2 Compliant Debugger         yes (auto)
->>>OSBDM (JTAG only) Programmer            yes (auto)
->>>eStick/opendous JTAG Programmer         yes (auto)
->>>Olimex ARM-JTAG-EW Programmer           yes (auto)
->>>Raisonance RLink JTAG Programmer        yes (auto)
->>>USBProg JTAG Programmer                 yes (auto)
->>>Espressif JTAG Programmer               yes (auto)
->>>Andes JTAG Programmer (deprecated)      no
->>>CMSIS-DAP Compliant Debugger            no
->>>Nu-Link Programmer                      no
->>>Cypress KitProg Programmer              no
->>>Altera USB-Blaster Compatible           no
->>>ASIX Presto Adapter                     no
->>>OpenJTAG Adapter                        no
->>>Linux GPIO bitbang through libgpiod     no
->>>SEGGER J-Link Programmer                yes (auto)
->>>Bus Pirate                              yes (auto)
->>>Use Capstone disassembly framework      no
-```
+>>>```
+OpenOCD configuration summary`
+--------------------------------------------------
+MPSSE mode of FTDI based devices        yes (auto)
+ST-Link Programmer                      yes (auto)
+TI ICDI JTAG Programmer                 yes (auto)
+Keil ULINK JTAG Programmer              yes (auto)
+Altera USB-Blaster II Compatible        yes (auto)
+Bitbang mode of FT232R based devices    yes (auto)
+Versaloon-Link JTAG Programmer          yes (auto)
+TI XDS110 Debug Probe                   yes (auto)
+CMSIS-DAP v2 Compliant Debugger         yes (auto)
+OSBDM (JTAG only) Programmer            yes (auto)
+eStick/opendous JTAG Programmer         yes (auto)
+Olimex ARM-JTAG-EW Programmer           yes (auto)
+Raisonance RLink JTAG Programmer        yes (auto)
+USBProg JTAG Programmer                 yes (auto)
+Espressif JTAG Programmer               yes (auto)
+Andes JTAG Programmer (deprecated)      no
+CMSIS-DAP Compliant Debugger            no
+Nu-Link Programmer                      no
+Cypress KitProg Programmer              no
+Altera USB-Blaster Compatible           no
+ASIX Presto Adapter                     no
+OpenJTAG Adapter                        no
+Linux GPIO bitbang through libgpiod     no
+SEGGER J-Link Programmer                yes (auto)
+Bus Pirate                              yes (auto)
+Use Capstone disassembly framework      no
+>>>```
         - `make`
         - `sudo make install`
 
