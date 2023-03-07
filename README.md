@@ -55,8 +55,9 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
         - `./configure`
             - No option flags were needed.
             - You should see something like the following when it is done:
+
 ```
-OpenOCD configuration summary`
+OpenOCD configuration summary
 --------------------------------------------------
 MPSSE mode of FTDI based devices        yes (auto)
 ST-Link Programmer                      yes (auto)
@@ -85,6 +86,7 @@ SEGGER J-Link Programmer                yes (auto)
 Bus Pirate                              yes (auto)
 Use Capstone disassembly framework      no
 ```
+
         - `make`
         - `sudo make install`
 
