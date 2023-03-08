@@ -188,10 +188,14 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
 - Open a terminal *within* vscode (CTL+Shift+`) and type the following
     - `make`
     - `make flash` 
-- Review changes in the GTKTerm
+- Review changes in the GTKTerm.
 - Run the Debugger (F5).  You should see the debugger controls (see pic) near the top of the window.
         ![Cortex-Debug Controls](pics/debug_controls.png)
 
+# Summary
+This guide provided you with an example of how to use VS Code as an IDE on Ubuntu 22.04. The intent was to explain this clear enough to allow you to make your own projects using this setup, not just TI examples. 
+
+Happy coding!
 
 
 
