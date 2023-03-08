@@ -72,12 +72,24 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
 
 
 **Permissions**
-- Reasoning: When a usb device (e.g., the TM4C123GXL) is connected, Linux assigns it a name lists it in the /dev/ directory.  Since this is dynamically assigned we can find out what device name the TM4C123GXL was assigned by reviewing recent activity on the system:
-    - `dmesg`
+- Reasoning: When a usb device (e.g., the TM4C123GXL) is connected, Linux assigns it a name and lists it in the /dev/ directory; however, all users aren't necessarily given permssion to *use* the device.  Permission to used the device needs to be established.
+- OpenOCD and CCS both provide file that allow for USB permissions to be automatically  
+
+
+
+- Since the name is dynamically assigned we can find out what device name the TM4C123GXL was assigned by reviewing recent activity on the system:
+    - `$ dmesg`
         - This should result in something like:
                 ![Dmesg Output](pics/dmesg.png)
+        - The last line idicates that a USB device was connected
+- Now determine the permissions set on the device:
+    - `$ ll /dev/ttyACM0`
+            ![ttyACM0 Perms](ttyACM0_perms/dmesg.png)
+- Verify that the desired user account has access:
+    - `$ groups mark`
+            ![Dmesg Output](groups/dmesg.png)
 
-                
+- The       
 
 ## Test Run
 
