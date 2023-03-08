@@ -75,7 +75,7 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
 - Reasoning: When a usb device (e.g., the TM4C123GXL) is connected, Linux assigns it a name lists it in the /dev/ directory.  Since this is dynamically assigned we can find out what device name the TM4C123GXL was assigned by reviewing recent activity on the system:
     - `dmesg`
         - This should result in something like:
-                ![dmesg Output](pics/dmesg.png)
+                ![Dmesg Output](pics/dmesg.png)
 
                 
 
