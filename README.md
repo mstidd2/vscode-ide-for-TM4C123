@@ -79,9 +79,11 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
         - The last line idicates that a USB device was connected
 - Now determine the permissions set on the device:
     - `$ ll /dev/ttyACM0`
+        - This should result in something like:
             ![ttyACM0 Perms](pics/ttyACM0_perms.png)
 - Verify that the desired user account has access:
     - `$ groups mark`
+        - This should result in something like:
             ![Dmesg Output](pics/groups.png)
 - If permission issues are still occuring, the computer may need to be resarted to load the new rules files. 
 
@@ -109,7 +111,7 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
 ### The SVD File
 - Reasoning: Cortex-Debug needs access to a formal description of the TM4C123GH6PM microcrontroller in order to operate correctly.
 - Original Source: https://github.com/posborne/cmsis-svd/blob/master/data/TexasInstruments/TM4C123GH6PM.svd  
-- Copy the TM4C123GH6PM.svd file from this repo into the 'myti/my_tive_c/' directory copied earlier. 
+- Copy the TM4C123GH6PM.svd file from this repo into the 'myti/my_tiva_c/' directory copied earlier. 
 
 ### Connect to the TM4C123GXL's UART serial interface
 - Reasoning: The example code being used in this guide (qs-rgb) has a UART interface from which some of the settings can be adjusted. We will modify the prompt text then compile and flash the code to the device to confirm that the change was successul. 
@@ -117,7 +119,7 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
     - The configuration: 
             ![gtkterm Config](pics/gtkterm_config.png)
     - After pushing the reset button:
-            ![gtkterm Config](pics/gqs-rgb_prompt_original.png)
+            ![gtkterm Config](pics/qs-rgb_prompt_original.png)
             
 ### Edit the Makefile in qs-rgb
 - Reasoning: To allow us to easily flash the TM4C123GXL from the command line using "make flash", we need to edit the Makefile.
