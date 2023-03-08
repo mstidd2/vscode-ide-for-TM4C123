@@ -102,6 +102,22 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
 
 ## Testing VS Code IDE with TI Examples                     
 
+### Obtaining TI Examples
+- Reasoning: TI's CCS provides example projects to use for learning how to code their devices.  A subset of these files relevant to the TM4C123GXL (and TM4C129EXL for my own use) have been extracted and saved in this repository. 
+- Copy the 'myti/' folder to wherever you would like to have it. 
+
+### The SVD File
+- Reasoning: Cortex-Debug needs access to a formal description of the TM4C123GH6PM microcrontroller in order to operate correctly.  
+- Copy the TM4C123GH6PM.svd file from this repo into the 'myti/' directory copied earlier. 
+
+### Connect to the TM4C123GXL's UART serial interface
+- Reasoning: The example code being used in this guide (qs-rgb) has a UART interface from which some of the settings can be adjusted. We will modify the prompt text then compile and flash the code to the device to confirm that the change was successul. 
+- Start the 'Serial port terminal' (a.k.a. gtkterm) application.  Configure it to point to the ttyACM0 interface (or whichever one you established previously).  Then push the reset button on the TM4C.
+    - The configuration: 
+            ![gtkterm Config](pics/gtkterm_config.png)
+    - After pushing the reset button:
+            ![gtkterm Config](pics/gqs-rgb_prompt_original.png)
+            
 
 
 
