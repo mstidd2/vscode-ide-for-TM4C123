@@ -7,11 +7,11 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
  - Version: 1.76.0
  - Source: Repos (snap)
      - `$ sudo apt-get install code`
- - Extensions
+ - Extensions (install these now)
     - Cortex-Debug (version 1.8.0)
     - C/C++ (version 1.14.4)
     - Python (version 2022.10.1)
-    - Others as neccessary or you see fit
+    - Others as neccessary or as you see fit
 
 ### GTKTerm
 - Purpose: Connecting/Reconnecting to UART serial interface
@@ -121,9 +121,15 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
     - After pushing the reset button:
             ![gtkterm Config](pics/qs-rgb_prompt_original.png)
             
+### Edit the UART prompt in qs-rgb.c
+- Reasoning: Edit this UART prompt so that we can verify that the updated binary was flashed to the device. 
+- Navigate to the 'my_tiva_c/examples/boards/ek-tm4c123gxl/qs-rgb/' directory copied earlier and open qs-rgb with the editor of your choice.
+- Go to the UART Prompt (on or around line 542) and change some text. 
+- Save and exit the file. 
+
 ### Edit the Makefile in qs-rgb
 - Reasoning: To allow us to easily flash the TM4C123GXL from the command line using "make flash", we need to edit the Makefile.
-- Navigate to the 'my_tiva_c/examples/boards/ek-tm4c123gxl/qs-rgb/' directory copied earlier and open the Makefile in your desired text editor. 
+- Go to the qs-rgb/' directory and open the Makefile in your desired text editor. 
 - Add the following at/near the beginning of the Makefile. Be sure to change the DEV if different than ttyACM0:
 
         #DEV : The serial device will likely be /dev/ttyACM0
@@ -136,7 +142,25 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
 
         #Flashes bin to TM4C123GXL
         flash:
-        $(FLASHER) -S $(DEV) ${COMPILER}/blinky.bin
+        $(FLASHER) -S $(DEV) ${COMPILER}/qs-rgb.bin
+- Save and exit the file. 
 
+### Make and flash the binary files
+- Reasoning: The TI example binary files (and other important files) have not been created yet.  They need to be created then flashed to the device. 
+- While in the  'qs-rgb/' directory, type `make` on the command line to compile the code.
+- Then type `make flash` to flash the device. 
+- A review of UART interface (via GTKTerm) should show the changes you made to the UART prompt. 
+
+
+### Setting up the debugger launch file in VS Code
+- All terminals except the GTKTerm terminal can be closed now.
+- Open VS Code and open the 'my_tiva_c/examples/boards/ek-tm4c123gxl/qs-rgb/' folder.  
+- Click on the 
+
+
+
+
+
+ 
 
 
