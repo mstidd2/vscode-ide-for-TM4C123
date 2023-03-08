@@ -107,8 +107,9 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
 - Copy the 'myti/' folder to wherever you would like to have it. 
 
 ### The SVD File
-- Reasoning: Cortex-Debug needs access to a formal description of the TM4C123GH6PM microcrontroller in order to operate correctly.  
-- Copy the TM4C123GH6PM.svd file from this repo into the 'myti/' directory copied earlier. 
+- Reasoning: Cortex-Debug needs access to a formal description of the TM4C123GH6PM microcrontroller in order to operate correctly.
+- Original Source: https://github.com/posborne/cmsis-svd/blob/master/data/TexasInstruments/TM4C123GH6PM.svd  
+- Copy the TM4C123GH6PM.svd file from this repo into the 'myti/my_tive_c/' directory copied earlier. 
 
 ### Connect to the TM4C123GXL's UART serial interface
 - Reasoning: The example code being used in this guide (qs-rgb) has a UART interface from which some of the settings can be adjusted. We will modify the prompt text then compile and flash the code to the device to confirm that the change was successul. 
@@ -118,8 +119,19 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
     - After pushing the reset button:
             ![gtkterm Config](pics/gqs-rgb_prompt_original.png)
             
-
-
+### Edit the Makefile in qs-rgb
+- Reasoning: To allow us to easily flash the TM4C123GXL from the command line using "make flash", we need to edit the Makefile.
+- Navigate to the 'my_tiva_c/examples/boards/ek-tm4c123gxl/qs-rgb/' directory copied earlier and open the Makefile in your desired text editor. 
+- Add the following at/near the beginning of the Makefile. Be sure to change the DEV if different than ttyACM0:
+>#DEV : The serial device will likely be /dev/ttyACM0
+>DEV=/dev/ttyACM0
+>
+>#FLASHER: The flash utility used
+>FLASHER = lm4flash
+- Add the following to the end of the Makefile
+>#Flashes bin to TM4C123GXL
+>flash:
+>$(FLASHER) -S $(DEV) ${COMPILER}/blinky.bin
 
 
 
