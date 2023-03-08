@@ -119,7 +119,7 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
     - The configuration: 
             ![gtkterm Config](pics/gtkterm_config.png)
     - After pushing the reset button:
-            ![gtkterm Config](pics/qs-rgb_prompt_original.png)
+            ![OG qs-rgb Prompt](pics/qs-rgb_prompt_original.png)
             
 ### Edit the UART prompt in qs-rgb.c
 - Reasoning: Edit this UART prompt so that we can verify that the updated binary was flashed to the device. 
@@ -155,8 +155,32 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
 ### Setting up the debugger launch file in VS Code
 - All terminals except the GTKTerm terminal can be closed now.
 - Open VS Code and open the 'my_tiva_c/examples/boards/ek-tm4c123gxl/qs-rgb/' folder.  
-- Click on the 
-
+- Click on the 'create a lauch.json file' in the debugger section of the inteface:
+      ![Run-and-Debug Section](pics/run_n_debug.png)
+- Replace the test in the launch.json file with the following:
+        {
+            // Use IntelliSense to learn about possible attributes.
+            // Hover to view descriptions of existing attributes.
+            // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+            "version": "0.2.0",
+            "configurations": [
+                {
+                    "name": "Cortex Debug",
+                    "cwd": "${workspaceFolder}",
+                    "executable": "./gcc/qs-rgb.axf", // This changes for each project
+                    "request": "launch",
+                    "type": "cortex-debug",
+                    "runToEntryPoint": "main",
+                    "servertype": "openocd",
+                    "device": "TM4C123GH6PM",
+                    "configFiles": [
+                        // "interface/ti-icdi.cfg", // This isn't needed.  I get an "already configured" warning
+                        "board/ti_ek-tm4c123gxl.cfg"
+                    ],
+                    "svdFile": "../../../../TM4C123GH6PM.svd"
+                }
+            ]
+        }
 
 
 

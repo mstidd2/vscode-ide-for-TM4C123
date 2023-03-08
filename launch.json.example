@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug",
+            "cwd": "${workspaceFolder}",
+            "executable": "./gcc/qs-rgb.axf", // This changes for each project
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "openocd",
+            "device": "TM4C123GH6PM",
+            "configFiles": [
+                // "interface/ti-icdi.cfg", // This isn't needed.  I get an "already configured" warning
+                "board/ti_ek-tm4c123gxl.cfg"
+            ],
+            "svdFile": "../../../../TM4C123GH6PM.svd"
+        }
+    ]
+}
