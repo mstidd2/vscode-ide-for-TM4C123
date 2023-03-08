@@ -125,12 +125,15 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
 - Reasoning: To allow us to easily flash the TM4C123GXL from the command line using "make flash", we need to edit the Makefile.
 - Navigate to the 'my_tiva_c/examples/boards/ek-tm4c123gxl/qs-rgb/' directory copied earlier and open the Makefile in your desired text editor. 
 - Add the following at/near the beginning of the Makefile. Be sure to change the DEV if different than ttyACM0:
+
         >#DEV : The serial device will likely be /dev/ttyACM0
         >DEV=/dev/ttyACM0
         >
         >#FLASHER: The flash utility used
         >FLASHER = lm4flash
+
 - Add the following to the end of the Makefile
+
         >#Flashes bin to TM4C123GXL
         >flash:
         >$(FLASHER) -S $(DEV) ${COMPILER}/blinky.bin
