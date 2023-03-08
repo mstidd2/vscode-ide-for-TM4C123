@@ -157,9 +157,10 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
 - Open VS Code and open the 'my_tiva_c/examples/boards/ek-tm4c123gxl/qs-rgb/' folder.  
 - Click on the 'create a lauch.json file' in the debugger section of the inteface:
       ![Run-and-Debug Section](pics/run_n_debug.png)
-- Replace the test in the launch.json file with the following:
+- Replace the text in the launch.json file with the following:
         
-    ``` {
+    ``` 
+        {
             // Use IntelliSense to learn about possible attributes.
             // Hover to view descriptions of existing attributes.
             // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
@@ -181,9 +182,7 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
                     "svdFile": "../../../../TM4C123GH6PM.svd"
                 }
             ]
-        } ```
-        
-
+        } 
 
 
 
