@@ -106,12 +106,12 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
 
 ### Obtaining TI Examples
 - Reasoning: TI's CCS provides example projects to use for learning how to code their devices.  A subset of these files relevant to the TM4C123GXL (and TM4C129EXL for my own use) have been extracted and saved in this repository. 
-- Copy the 'myti/' folder to wherever you would like to have it. 
+- Copy the 'my_tiva_c/' folder to wherever you would like to have it. 
 
 ### The SVD File
 - Reasoning: Cortex-Debug needs access to a formal description of the TM4C123GH6PM microcrontroller in order to operate correctly.
 - Original Source: https://github.com/posborne/cmsis-svd/blob/master/data/TexasInstruments/TM4C123GH6PM.svd  
-- Copy the TM4C123GH6PM.svd file from this repo into the 'myti/my_tiva_c/' directory copied earlier. 
+- Copy the TM4C123GH6PM.svd file from this repo into the 'my_tiva_c/' directory copied earlier. 
 
 ### Connect to the TM4C123GXL's UART serial interface
 - Reasoning: The example code being used in this guide (qs-rgb) has a UART interface from which some of the settings can be adjusted. We will modify the prompt text then compile and flash the code to the device to confirm that the change was successul. 
@@ -151,11 +151,10 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
 - Then type `make flash` to flash the device. 
 - A review of UART interface (via GTKTerm) should show the changes you made to the UART prompt. 
 
-
 ### Setting up the debugger launch file in VS Code
 - All terminals except the GTKTerm terminal can be closed now.
 - Open VS Code and open the 'my_tiva_c/examples/boards/ek-tm4c123gxl/qs-rgb/' folder.  
-- Click on the 'create a lauch.json file' in the debugger section of the inteface:
+- Click on the 'create a lauch.json file' in the debugger section of the interface:
       ![Run-and-Debug Section](pics/run_n_debug.png)
 - Replace the text in the launch.json file with the following:
         
@@ -184,8 +183,18 @@ This document describes how to use an Ubuntu 22.04 machine for compiling, flashi
             ]
         } 
 
+## Putting it all together
+- Edit the UART command prompt text in the qs-rgb.c file again and save the changes.
+- Open a terminal *within* vscode (CTL+Shift+`) and type the following
+    - `make`
+    - `make flash` 
+- Review changes in the GTKTerm
+- Run the Debugger (F5).  You should see the debugger controls (see pic) near the top of the window.
+        ![Cortex-Debug Controls](pics/debug_controls.png)
 
 
- 
+
+
+
 
 
