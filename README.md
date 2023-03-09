@@ -191,6 +191,7 @@ This README alonge with the files in this repository provide a guide on how to u
     - `make flash` 
 - Review changes in the GTKTerm.
 - Run the Debugger (F5).  You should see the debugger controls (see pic) near the top of the window.
+
 ![Cortex-Debug Controls](pics/debug_controls.png)
 
 # Summary
