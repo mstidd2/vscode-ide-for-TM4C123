@@ -78,7 +78,7 @@ This README along with the files in this repository provide a guide on how to us
     - `$ dmesg`
         - Example output:
                 ![Dmesg Output](pics/dmesg.png)
-        - The last line idicates that a USB device was connected
+        - The last line indicates that a USB device was connected.
 - Now determine the permissions set on the device:
     - `$ ll /dev/ttyACM0`
         - Example output:
@@ -96,7 +96,8 @@ This README along with the files in this repository provide a guide on how to us
 - With the TM4C123GXL connected, open a terminal window and type:
     - `$ openocd -f board/ti_ek-tm4c123gxl.cfg`
     - Example output:
-            ![OpenOCD Connect](pics/openocd_connect.png)
+
+        ![OpenOCD Connect](pics/openocd_connect.png)
     - Notice that this creates a server for which debuggers can connect to. 
 - Then, start the cross compiler debugger in a second terminal window:
     - `$ gdb-multiarch`
