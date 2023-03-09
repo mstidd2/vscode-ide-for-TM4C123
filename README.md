@@ -125,7 +125,7 @@ This README along with the files in this repository provide a guide on how to us
 
 ### Connect to the TM4C123GXL's UART serial interface
 - Reasoning: The example code (which is also the code the TM4C123GXL is shipped with) being used in this guide (qs-rgb) has a UART interface from which some of the functionality can be adjusted. We will modify the prompt text then compile and flash the code to the device to confirm that the change was successul. 
-- Start the **Serial port terminal** (a.k.a. gtkterm) application.  Configure it to point to the ttyACM0 interface (or whichever one you identified previously).  Then push the reset button on the TM4C.
+- Start the Serial Port Terminal (a.k.a. gtkterm) application.  Configure it to point to the ttyACM0 interface (or whichever one you identified previously).  Then push the reset button on the TM4C.
     - The configuration: 
 
         ![gtkterm Config](pics/gtkterm_config.png)
@@ -153,7 +153,7 @@ This README along with the files in this repository provide a guide on how to us
 
         #Flashes bin to TM4C123GXL
         flash:
-        $(FLASHER) -S $(DEV) ${COMPILER}/qs-rgb.bin
+        $(FLASHER) -S $(DEV) ${COMPILER}/qs-rgb.bin  #Change the binary for each project. 
 - Save and exit the file. 
 
 ### Make and flash the binary files
