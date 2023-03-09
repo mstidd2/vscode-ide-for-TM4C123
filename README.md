@@ -87,6 +87,8 @@ This README alonge with the files in this repository provide a guide on how to u
     - `$ groups mark`
         - Example output:
             ![Groups Output](pics/groups.png)
+    - If the group associated with the device (e.g., plugdev) is not listed, add the user to that group:
+        - `addgroup mark plugdev` 
 - If permission issues are still occuring, the computer may need to be resarted to load the new rules files. 
 
 ## Testing openocd and gdb
