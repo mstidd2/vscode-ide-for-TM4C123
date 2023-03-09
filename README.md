@@ -98,13 +98,14 @@ This README along with the files in this repository provide a guide on how to us
     - Example output:
 
         ![OpenOCD Connect](pics/openocd_connect.png)
-    - Notice that this creates a server for which debuggers can connect to. 
+    - Notice that this creates a server for which debuggers can connect. 
 - Then, start the cross compiler debugger in a second terminal window:
     - `$ gdb-multiarch`
-        - This will start the debugger and provide a `(gdb)` prompt to enter commands. Type the following to connect the debugger to the openocd server:
+        - This will start the debugger and provide a `(gdb)` prompt to enter debug commands. Type the following to connect the debugger to the openocd server:
             - `target extended-remote localhost:3333`
             - Example output:
-                    ![Gdb-multiarch Connect](pics/gdb-multiarch_connect.png)
+            
+               ![gdb-multiarch connect](pics/gdb-multiarch_connect.png)
 - If everything appears to be working, exit the debugger (type `quit`) and terminate openocd (CTL+C).
 
 ## Testing VS Code IDE with TI Examples                     
@@ -119,7 +120,7 @@ This README along with the files in this repository provide a guide on how to us
 - Copy the TM4C123GH6PM.svd file from this repository into the 'my_tiva_c/' directory copied earlier. 
 
 ### Connect to the TM4C123GXL's UART serial interface
-- Reasoning: The example code (which is also the code the TM4c123GXL is shipped with) being used in this guide (qs-rgb) has a UART interface from which some of the functionality can be adjusted. We will modify the prompt text then compile and flash the code to the device to confirm that the change was successul. 
+- Reasoning: The example code (which is also the code the TM4C123GXL is shipped with) being used in this guide (qs-rgb) has a UART interface from which some of the functionality can be adjusted. We will modify the prompt text then compile and flash the code to the device to confirm that the change was successul. 
 - Start the **Serial port terminal** (a.k.a. gtkterm) application.  Configure it to point to the ttyACM0 interface (or whichever one you identified previously).  Then push the reset button on the TM4C.
     - The configuration: 
             ![gtkterm Config](pics/gtkterm_config.png)
@@ -129,13 +130,13 @@ This README along with the files in this repository provide a guide on how to us
 ### Edit the UART prompt in qs-rgb.c
 - Reasoning: Edit the UART prompt so that we can verify that the updated binary was flashed to the device. 
 - Navigate to the my_tiva_c/examples/boards/ek-tm4c123gxl/qs-rgb/ directory copied earlier and open qs-rgb.c with the editor of your choice.
-- Go to the UART Prompt (on or around line 542) and change some text. 
+- Go to the UART prompt (on or around line 542) and change some text. 
 - Save and exit the file. 
 
 ### Edit the Makefile in qs-rgb
 - Reasoning: To allow us to easily flash the TM4C123GXL from the command line using "make flash", we need to edit the Makefile to perform the flash.
 - Go to the qs-rgb/' directory and open the Makefile in your desired text editor. 
-- Add the following at the beginning of the Makefile. Be sure to change the DEV if the device was connected to a differnt port than ttyACM0:
+- Add the following at the beginning of the Makefile. Be sure to change the DEV if the device was assigned a different device name than ttyACM0:
 
         #DEV : The serial device will likely be /dev/ttyACM0
         DEV=/dev/ttyACM0
@@ -151,10 +152,10 @@ This README along with the files in this repository provide a guide on how to us
 
 ### Make and flash the binary files
 - Reasoning: The TI example binary files (and other important files) have not been created yet. They need to be created then flashed to the device. 
-- While in the 'qs-rgb/' directory, type `make` on the command line to compile the code.
+- While in the qs-rgb/ directory, type `make` on the command line to compile the code.
 - Then type `make flash` to flash the device. 
 - A review of UART interface (via GTKTerm) should show the changes you made to the UART prompt. 
-- All terminals except the GTKTerm terminal can be closed now.
+- All terminal windows except the GTKTerm terminal can now be closed.
 
 ### Setting up the debugger launch file in VS Code
 - Open VS Code and open the my_tiva_c/examples/boards/ek-tm4c123gxl/qs-rgb/ folder.  
@@ -179,7 +180,7 @@ This README along with the files in this repository provide a guide on how to us
                     "servertype": "openocd",
                     "device": "TM4C123GH6PM",
                     "configFiles": [
-                        // "interface/ti-icdi.cfg", // This isn't needed.  I get an "already configured" warning
+                        // "interface/ti-icdi.cfg", // This isn't likely needed.  I get an "already configured" warning.
                         "board/ti_ek-tm4c123gxl.cfg"
                     ],
                     "svdFile": "../../../../TM4C123GH6PM.svd"
@@ -198,6 +199,6 @@ This README along with the files in this repository provide a guide on how to us
     ![Cortex-Debug Controls](pics/debug_controls.png)
 
 # Summary
-This guide provided you with an example of how to use VS Code as an IDE on Ubuntu 22.04. The intent was to explain this clearly enough to allow you to make your own projects for the TM4C123GXL using this setup, not just TI examples. 
+This guide provided you with an example of how to use VS Code as an IDE for the TM4C123GXL device on Ubuntu 22.04. The intent was to explain this clearly enough to allow you to make your own projects for the TM4C123GXL using this setup, not just TI examples. 
 
 Happy coding!
