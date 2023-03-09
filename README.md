@@ -57,7 +57,8 @@ This README along with the files in this repository provide a guide on how to us
         - `./configure`
             - No option flags were needed.
             - You should see something like the following when it is done:
-                    ![Config Output](pics/OpenOCD-config-results.png)
+
+                ![Config Output](pics/OpenOCD-config-results.png)
 
         - `$ make`
         - `$ sudo make install`
@@ -77,16 +78,19 @@ This README along with the files in this repository provide a guide on how to us
 - Since the device name is dynamically assigned upon connecting we can find out what device name the TM4C123GXL was assigned by reviewing recent activity on the system:
     - `$ dmesg`
         - Example output:
-                ![Dmesg Output](pics/dmesg.png)
+
+            ![Dmesg Output](pics/dmesg.png)
         - The last line indicates that a USB device was connected.
 - Now determine the permissions set on the device:
     - `$ ll /dev/ttyACM0`
         - Example output:
+
             ![ttyACM0 Perms](pics/ttyACM0_perms.png)
 - Verify that the desired user account has access:
     - `$ groups mark`
         - Example output:
-            ![Groups Output](pics/groups.png)
+
+           ![Groups Output](pics/groups.png)
     - If the group associated with the device (e.g., plugdev) is not listed, add the user to that group:
         - `addgroup mark plugdev` 
 - If permission issues are still occuring, the computer may need to be resarted to load the new rules files. 
@@ -123,9 +127,11 @@ This README along with the files in this repository provide a guide on how to us
 - Reasoning: The example code (which is also the code the TM4C123GXL is shipped with) being used in this guide (qs-rgb) has a UART interface from which some of the functionality can be adjusted. We will modify the prompt text then compile and flash the code to the device to confirm that the change was successul. 
 - Start the **Serial port terminal** (a.k.a. gtkterm) application.  Configure it to point to the ttyACM0 interface (or whichever one you identified previously).  Then push the reset button on the TM4C.
     - The configuration: 
-            ![gtkterm Config](pics/gtkterm_config.png)
+
+        ![gtkterm Config](pics/gtkterm_config.png)
     - After pushing the reset button:
-            ![OG qs-rgb Prompt](pics/qs-rgb_prompt_original.png)
+
+        ![OG qs-rgb Prompt](pics/qs-rgb_prompt_original.png)
             
 ### Edit the UART prompt in qs-rgb.c
 - Reasoning: Edit the UART prompt so that we can verify that the updated binary was flashed to the device. 
@@ -160,7 +166,8 @@ This README along with the files in this repository provide a guide on how to us
 ### Setting up the debugger launch file in VS Code
 - Open VS Code and open the my_tiva_c/examples/boards/ek-tm4c123gxl/qs-rgb/ folder.  
 - Click on the 'create a lauch.json file' in the debugger section of the interface:
-      ![Run-and-Debug Section](pics/run_n_debug.png)
+
+    ![Run-and-Debug Section](pics/run_n_debug.png)
 - Replace the text in the launch.json file with the following:
         
     ``` 
