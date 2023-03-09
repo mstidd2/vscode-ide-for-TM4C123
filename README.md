@@ -116,12 +116,12 @@ This README along with the files in this repository provide a guide on how to us
 
 ### Obtaining TI Examples
 - Reasoning: TI's CCS provides example projects to use for learning how to code their devices.  A subset of these files relevant to the TM4C123GXL (and TM4C129EXL for my own use) have been extracted and saved in this repository. 
-- Copy the 'my_tiva_c/' folder to wherever you would like to work with it. 
+- Copy the my_tiva_c/ folder to wherever you would like to work with it. 
 
 ### The SVD File
 - Reasoning: Cortex-Debug needs access to a formal description of the TM4C123GH6PM microcrontroller in order to operate correctly.
 - Original Source: https://github.com/posborne/cmsis-svd/blob/master/data/TexasInstruments/TM4C123GH6PM.svd  
-- Copy the TM4C123GH6PM.svd file from this repository into the 'my_tiva_c/' directory copied earlier. 
+- Copy the TM4C123GH6PM.svd file from this repository into the my_tiva_c/ directory copied earlier. 
 
 ### Connect to the TM4C123GXL's UART serial interface
 - Reasoning: The example code (which is also the code the TM4C123GXL is shipped with) being used in this guide (qs-rgb) has a UART interface from which some of the functionality can be adjusted. We will modify the prompt text then compile and flash the code to the device to confirm that the change was successul. 
@@ -141,7 +141,7 @@ This README along with the files in this repository provide a guide on how to us
 
 ### Edit the Makefile in qs-rgb
 - Reasoning: To allow us to easily flash the TM4C123GXL from the command line using "make flash", we need to edit the Makefile to perform the flash.
-- Go to the qs-rgb/' directory and open the Makefile in your desired text editor. 
+- Go to the qs-rgb/ directory and open the Makefile in your desired text editor. 
 - Add the following at the beginning of the Makefile. Be sure to change the DEV if the device was assigned a different device name than ttyACM0:
 
         #DEV : The serial device will likely be /dev/ttyACM0
