@@ -66,7 +66,7 @@ This README along with the files in this repository provide a guide on how to us
 ## Configuration
 
 ### Symlink to gdb-multiarch
-- Reasoning: the Cortex-Debug extension calls upon arm-none-eabi-gdb (the cross compiler's debugger); however, arm-none-eabi-gdb is no longer a binary associated with the gcc-arm-none-eabi suite. It appears that 'gdb-muliarch' is now the gdb used for the cross compiler. Since the Cortex-Debug error only indicated that it doesn't have the correct *path* to the arm-none-eabi-gdb binary, updating the path settings doesn't solve the issue; however, creating a symlink that points Cortex-Debug to gdb-multiarch when it is calling arm-none-eabi-gdb does.  
+- Reasoning: the Cortex-Debug extension calls upon arm-none-eabi-gdb (the cross compiler's debugger); however, arm-none-eabi-gdb is no longer a binary associated with the gcc-arm-none-eabi suite. Cortex-Debug provides an error indicating that the path to arm-none-eabi-gdb needs to be set correctly. It appears that 'gdb-muliarch' is now the gdb used for the cross compiler. Since the Cortex-Debug error only indicated that it doesn't have the correct *path* to the arm-none-eabi-gdb binary, updating the path settings doesn't solve the issue; however, creating a symlink that points Cortex-Debug to gdb-multiarch when it is calling arm-none-eabi-gdb does.  
 - While in the /usr/bin/ directory, run:
     - `$ sudo ln -s gdb-multiarch arm-none-eabi-gdb`
     - `$ sudo chmod 755 arm-none-eabi-gdb`
@@ -80,7 +80,7 @@ This README along with the files in this repository provide a guide on how to us
         - Example output:
 
             ![Dmesg Output](pics/dmesg.png)
-        - The last line indicates that a USB device was connected.
+        - The last line indicates the device name provided to the TM4C.
 - Now determine the permissions set on the device:
     - `$ ll /dev/ttyACM0`
         - Example output:
