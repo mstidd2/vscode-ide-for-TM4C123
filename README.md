@@ -1,6 +1,6 @@
-# Intro
+# Introduction
 
-This README alonge with the files in this repository provide a guide on how to use an Ubuntu 22.04 machine for compiling, flashing, and debugging TM4C123GXL devices using an IDE commonly used on Linux, Visual Studio Code (VS Code or vscode).  VS Code is an alternative to, and a more generalizable solution than, using Texas Instrument's (TI’s) IDE, Code Composer Studio (CCS), for development on Linux. 
+This README along with the files in this repository provide a guide on how to use an Ubuntu 22.04 machine for compiling, flashing, and debugging TM4C123GXL devices using an IDE commonly used on Linux, Visual Studio Code (VS Code or vscode).  VS Code is an alternative to, and a more generalizable solution than, using Texas Instrument's (TI’s) IDE, Code Composer Studio (CCS), for development on Linux. 
 
 ## Software Installation (install now)
 
