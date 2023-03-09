@@ -54,7 +54,7 @@ This README along with the files in this repository provide a guide on how to us
             - Source: repos
         - `$ sudo apt-get install make libtool pkg-config libusb-1.0`
     - As per the README run the following commands while in the README's directory:
-        - `./configure`
+        - `$ ./configure`
             - No option flags were needed.
             - You should see something like the following when it is done:
 
@@ -92,7 +92,7 @@ This README along with the files in this repository provide a guide on how to us
 
            ![Groups Output](pics/groups.png)
     - If the group associated with the device (e.g., plugdev) is not listed, add the user to that group:
-        - `addgroup mark plugdev` 
+        - `$ addgroup mark plugdev` 
 - If permission issues are still occuring, the computer may need to be resarted to load the new rules files. 
 
 ## Testing openocd and gdb
@@ -165,7 +165,7 @@ This README along with the files in this repository provide a guide on how to us
 
 ### Setting up the debugger launch file in VS Code
 - Open VS Code and open the my_tiva_c/examples/boards/ek-tm4c123gxl/qs-rgb/ folder.  
-- Click on the 'create a lauch.json file' in the debugger section of the interface:
+- Click on the 'create a launch.json file' in the debugger section of the interface:
 
     ![Run-and-Debug Section](pics/run_n_debug.png)
 - Replace the text in the launch.json file with the following:
@@ -198,8 +198,8 @@ This README along with the files in this repository provide a guide on how to us
 ## Putting it all together
 - Edit the UART command prompt text in the qs-rgb.c file again and save the changes.
 - Open a terminal *within* vscode (CTL+Shift+`) and type the following
-    - `make`
-    - `make flash` 
+    - `$ make`
+    - `$ make flash` 
 - Review changes in the GTKTerm.
 - Run the Debugger (F5).  You should see the debugger controls (see pic) near the top of the window.
 
