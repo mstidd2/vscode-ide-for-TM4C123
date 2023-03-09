@@ -192,7 +192,7 @@ This README alonge with the files in this repository provide a guide on how to u
 - Review changes in the GTKTerm.
 - Run the Debugger (F5).  You should see the debugger controls (see pic) near the top of the window.
 
-![Cortex-Debug Controls](pics/debug_controls.png)
+    ![Cortex-Debug Controls](pics/debug_controls.png)
 
 # Summary
 This guide provided you with an example of how to use VS Code as an IDE on Ubuntu 22.04. The intent was to explain this clearly enough to allow you to make your own projects for the TM4C123GXL using this setup, not just TI examples. 
