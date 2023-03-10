@@ -42,7 +42,7 @@ This README along with the files in this repository provide a guide on how to us
 - Purpose: Allow the debugger (gdb-multiarch) to connect to the on chip debugger
 - Version: 0.12.0
 - Source: https://sourceforge.net/projects/openocd/
-  - The Cortex-Debug extension in vscode expects openocd's config files to be in /usr/local/share/openocd/scripts/; however, version 0.10 and 0.11 both store them in /usr/share/openocd/scripts/ using slightly different names.  Version 0.12.0 does store the scripts in the expected location; therfore, 0.12.0 was installed.
+  - The Cortex-Debug extension in vscode expects openocd's config files to be in /usr/local/share/openocd/scripts/; however, version 0.10 and 0.11 both store them in /usr/share/openocd/scripts/ using slightly different names.  Version 0.12.0 does store the scripts in the expected location; therefore, 0.12.0 was installed.
   - Download and extract the openocd-0.12.0.tar.bz2 from the link above.
   - The README indicates to install/verify the installation of the following:
     - make
